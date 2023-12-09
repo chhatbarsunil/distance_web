@@ -1,7 +1,10 @@
 <div class="container">
   <h1>Manage Users</h1>
+  <div>
+    <small class="info">Note: No validations and user friendly common messages applied for now</small>
+  </div>
   <div class="text-right">
-    <button [routerLink]="['/distance']" class="btn btn-primary">Create User</button>
+    <button [routerLink]="['/distance',0]" class="btn btn-primary">Create User</button>
   </div>
   <table aria-label="about user listing" class="user-list-table mt-2"
   aria-labelledby="Users Listing by Sunil Chhatbar">
@@ -27,4 +30,5 @@
     </tbody>
   </table>
 </div>
+
 
