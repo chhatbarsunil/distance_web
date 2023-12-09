@@ -12,6 +12,9 @@
     </div>
   </header>
 </div>
+<div *ngIf="isLoading" class="text-center">
+  <app-loader></app-loader>
+</div>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/distance.service';
 import { PRIMARY_OUTLET, Router, UrlSegment, UrlSegmentGroup, UrlTree } from '@angular/router';
+import { CommonService } from 'src/app/shared/services/common/common.service';
 
 @Component({
   selector: 'app-distance',
@@ -17,6 +18,7 @@ export class DistanceComponent implements OnInit {
   user = new UserModel();
   AddOrUpdateUserButtonName:string="Update";
   constructor(private _userService: UserService,
+    private _commonService:CommonService,
     private _router:Router
     ) {
     const tree: UrlTree = _router.parseUrl(_router.url);
@@ -33,7 +35,9 @@ export class DistanceComponent implements OnInit {
 
     }
   ngOnInit(): void {
-    this.getUserById(this.user.userId);
+    if(this.user.userId!==0){
+      this.getUserById(this.user.userId);
+    }
 
   }
   updatedButtonName(){
@@ -45,11 +49,16 @@ export class DistanceComponent implements OnInit {
     }
   }
   getUserById(userId:number){
+
+
+    this._commonService.startLoader()
     console.log("userId on init:",userId);
     this._userService.getUserById(userId).subscribe((response)=>{
+      this._commonService.stopLoader()
       this.user=response[0];
       console.log("this.user from component on init",this.user)
     })
+
   }
   addUser() {
       console.log("user", this.user)
