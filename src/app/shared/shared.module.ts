@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DistanceComponent } from '../components/distance/distance.component';
-import { LoginComponent } from '../components/login/login.component';
-
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,DistanceComponent,LoginComponent
-  ]
+    CommonModule,RouterModule,HttpClientModule
+  ],
+  exports:[
+    CommonModule,RouterModule,HttpClientModule
+  ],
 })
 export class SharedModule { }

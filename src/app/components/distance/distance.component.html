@@ -1,1 +1,47 @@
-<p>distance works!</p>
+<h1>{{AddOrUpdateUserButtonName}} User Details</h1>
+<br>
+<div class="row">
+    <div class="col">
+        <label>UserId</label>
+        <input type="number" class="form-control mb-2" [(ngModel)]="user.userId"/>
+    </div>
+    <div class="col">
+        <label>User Full Name</label>
+        <input class="form-control mb-2" [(ngModel)]="user.userName"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label>Email</label>
+        <input class="form-control mb-2" [(ngModel)]="user.email"/>
+    </div>
+    <div class="col">
+        <label>Phone</label>
+        <input class="form-control mb-2" [(ngModel)]="user.phone"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label>City</label>
+        <input class="form-control mb-2" [(ngModel)]="user.city"/>
+    </div>
+    <div class="col">
+        <label>Zip Code</label>
+        <input class="form-control mb-2" [(ngModel)]="user.zip"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label>Minimum Distance</label>
+        <input type="number" class="form-control mb-2" [(ngModel)]="user.minDistance" />
+    </div>
+    <div class="col">
+        <label>Maximum Distance</label>
+        <input type="number" class="form-control mb-2" [(ngModel)]="user.maxDistance" />
+    </div>
+</div>
+<div>
+  <div>
+    <button class="btn btn-primary" (click)="AddOrUpdateUser()">{{AddOrUpdateUserButtonName}}</button>
+  </div>
+</div>

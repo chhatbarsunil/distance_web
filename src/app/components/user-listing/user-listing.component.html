@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Manage Users</h1>
+  <div class="text-right">
+    <button [routerLink]="['/distance']" class="btn btn-primary">Create User</button>
+  </div>
+  <table aria-label="about user listing" class="user-list-table mt-2"
+  aria-labelledby="Users Listing by Sunil Chhatbar">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>User Full Name</th>
+        <th>Min Distance</th>
+        <th>Max Distance</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let user of users;index as indexNum;">
+        <td>{{user.userId}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.minDistance}}</td>
+        <td>{{user.maxDistance}}</td>
+        <td><a [routerLink]="['/distance',user.userId]">Edit</a></td>
+        <td><button (click)="removeUser(user.userId)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
